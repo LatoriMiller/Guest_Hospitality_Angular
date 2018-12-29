@@ -1,0 +1,96 @@
+<!-- name: string;
+roomSize: string;
+roomNum: Number;
+payment: string;
+numNight: Number;
+date: Date;
+status: string; -->
+  <!-- first we have a table and next there is a form that is only displayed if there is a guest list -->
+  <!-- a bootstap row has 12 the columns below takes two and eight and then the form follows -->
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <form>
+          <div class="form-row">
+  
+            <div class="col-md-4">
+              <input type="text" name="name" id="name" [(ngModel)]="newGuest.name" placeholder="Name" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <input name="roomSize" id="roomSize" [(ngModel)]="newGuest.roomSize" placeholder="Room Size"
+                class="form-control" id="roomSize">
+            </div>
+            <div class="col-md-1">
+              <button type="submit" class="btn btn-primary" (click)="create()">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  
+    <br />
+  
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+  
+        <div class="guests" *ngIf="guestsList">
+          <table class="table table-striped table-dark">
+            <thead class="h">
+              <tr class="h">
+                <th class="h">Name</th>
+                <th class="h">RoomSize</th>
+                <th class="h">Date</th>
+                <th class="h">Status</th>
+                <th class="h">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- when you double clicked the row -->
+              <tr class="guest" (dblclick)="editGuest(guest)" *ngFor="let guest of guestsList">
+                  <!-- swaps row in and out with the form rows -->
+                  <!-- is the object match what is in the edit array show the data to allow editing -->
+                  <!-- if it's not there it is NOT to be edited -->
+                <ng-container *ngIf="!editGuests.includes(guest); else editG">
+                  <td>{{guest.name}}</td>
+                  <td>{{guest.roomSize}}</td>
+                  <td>{{guest.date | date}}</td>
+                  <td>{{guest.status}}</td>
+                </ng-container>
+  
+                <ng-template #editG>
+                  <td><input type="text" name="name" id="name" (keypress)="submitGuest($event, guest)" [(ngModel)]="guest.name"
+                      placeholder="Name" class="form-control"></td>
+                  <td><input type="text" name="roomSize" id="roomSize" (keypress)="submitGuest($event, guest)"
+                      [(ngModel)]="guest.roomSize" placeholder="Room Size" class="form-control"></td>
+                  <td>{{guest.date | date}}</td>
+                  <td>
+                    <input type="text" name="status" id="status" (keypress)="submitGuest($event, guest)" [(ngModel)]="guest.status"
+                      placeholder="Status" class="form-control">
+                  </td>
+                </ng-template>
+  
+                <td class="o">
+                  <button class="btn btn-success" (click)="doneGuest(guest)">
+                    <i class="fa fa-check"></i>
+                  </button>
+                  <button class="btn btn-primary" (click)="editGuest(guest)">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                  <button class="btn btn-danger" (click)="deleteGuest(guest)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+  
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+  
+    </div>
+  </div>

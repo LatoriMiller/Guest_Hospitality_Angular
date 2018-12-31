@@ -10,6 +10,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { GuestComponent } from './guest/guest.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { AboutComponent } from './about/about.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { NavComponent } from './nav/nav.component';
     AppComponent,
     HomeComponent,
     NavComponent,
-    GuestComponent
+    GuestComponent,
+    AboutComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

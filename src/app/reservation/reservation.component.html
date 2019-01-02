@@ -9,7 +9,7 @@
       <div class="form-group row">
         <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
-          <input type="name" name="name" class="form-control" id="name" [(ngModel)]="newGuest.name"  placeholder="Guest Name">
+          <input type="name" name="name" class="form-control" id="name" [(ngModel)]="newGuest.name"  placeholder="Guest Name" required>
         </div>
       </div>
       <div class="form-group row">
@@ -19,21 +19,21 @@
         </div>
       </div>
       <div class="form-group row">
-          <label for="numNights" class="col-sm-2 col-form-label">Number of Nights</label>
+          <label for="numNight" class="col-sm-2 col-form-label">Number of Nights</label>
           <div class="col-sm-10">
-            <input name="numNights" type="number" class="form-control" id="numNights" [(ngModel)]="newGuest.numNights" placeholder="1">
+            <input name="numNight"  class="form-control" id="numNight" [(ngModel)]="newGuest.numNight" placeholder="1">
           </div>
         </div>
       <div class="form-group row">
-        <label for="roomNum" class="col-sm-2 col-form-label">Room Number</label>
-        <div class="col-sm-10">
-          <input type="text" name="roomNum" class="form-control" id="roomNum" [(ngModel)]="newGuest.roomNum" placeholder="Room #">
-        </div>
+          <label for="roomNum" class="col-sm-2 col-form-label">Room Number</label>
+          <div class="col-sm-10">
+            <input name="roomNum"  class="form-control" id="roomNum" [(ngModel)]="newGuest.roomNum" placeholder="room #">
+          </div>
       </div>
       <div class="form-group row">
           <label for="roomSize" class="col-sm-2 col-form-label">Room Size</label>
           <div class="col-sm-10">
-            <select name="roomSize" class="custom-select mr-sm-2" id="roomSize" [(ngModel)]="newGuest.roomSize" >
+            <select name="roomSize" class="custom-select mr-sm-2" id="roomSize" [(ngModel)]="newGuest.roomSize">
               <option selected>Select...</option>
               <option value="Single">Single</option>
               <option value="Double">Double</option>
@@ -45,7 +45,7 @@
       <div class="form-group row">
         <label for="payment" class="col-sm-2 col-form-label">Payment</label>
         <div class="col-sm-10">
-          <select name="payment" class="custom-select mr-sm-2" id="payment" [(ngModel)]="newGuest.payment" >
+          <select name="payment" class="custom-select mr-sm-2" id="payment" [(ngModel)]="newGuest.payment">
             <option selected>Select...</option>
             <option value="Paid">Paid</option>
             <option value="Unpaid">Unpaid</option>
@@ -59,7 +59,6 @@
             <option selected>Select...</option>
             <option value="Room Assigned">Room Assigned</option>
             <option value="Checked In">Checked In</option>
-            <option value="Checked Out">Checked Out</option>
           </select>
         </div>
       </div>

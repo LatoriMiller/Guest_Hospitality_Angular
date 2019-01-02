@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { GuestlistComponent } from './guestlist/guestlist.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     NavComponent,
     GuestComponent,
     AboutComponent,
-    ReservationComponent
+    ReservationComponent,
+    GuestlistComponent
   ],
   imports: [
     BrowserModule,

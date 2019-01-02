@@ -3,18 +3,18 @@ class Guest {
     _id: string;
     name: string;
     roomSize: string;
-    roomNum: Number;
+    roomNum: string;
     payment: string;
-    numNight: Number;
+    numNight: string;
     date: Date;
     status: string;
 //this creates a blank to do
     constructor(){
         this.name = ""
         this.roomSize = ""
-        this.roomNum = 0
+        this.roomNum = ""
         this.payment = ""
-        this.numNight = 0
+        this.numNight = ""
         this.date = new Date()
         this.status = ""
     }

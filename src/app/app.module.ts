@@ -13,6 +13,7 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { GuestlistComponent } from './guestlist/guestlist.component';
     GuestComponent,
     AboutComponent,
     ReservationComponent,
-    GuestlistComponent
+    GuestlistComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

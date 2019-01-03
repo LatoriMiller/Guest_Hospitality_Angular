@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

@@ -1,12 +1,3 @@
-<!-- name: string;
-roomSize: string;
-roomNum: Number;
-payment: string;
-numNight: Number;
-date: Date;
-status: string; -->
-  <!-- first we have a table and next there is a form that is only displayed if there is a guest list -->
-  <!-- a bootstap row has 12 the columns below takes two and eight and then the form follows -->
   <br/>
   <div class="container">
     <div class="row">
@@ -52,7 +43,6 @@ status: string; -->
               <tr class="guest" (dblclick)="editGuest(guest)" *ngFor="let guest of guestsList">
                   <!-- swaps row in and out with the form rows -->
                   <!-- is the object match what is in the edit array show the data to allow editing -->
-                  <!-- if it's not there it is NOT to be edited -->
                 <ng-container *ngIf="!editGuests.includes(guest); else editG">
                   <td>{{guest.name}}</td>
                   <td>{{guest.roomNum}}</td>

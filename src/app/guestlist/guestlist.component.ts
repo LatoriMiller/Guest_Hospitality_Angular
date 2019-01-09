@@ -15,7 +15,7 @@ export class GuestlistComponent implements OnInit {
   public newGuest: Guest = new Guest()
 
   //An Empty list for the visible guest list
-  guestsList: Guest[];
+  guestsList: Guest[] = [];
   //sets it to any empty array to use .includes method
   editGuests: Guest[] = [];
 
@@ -30,6 +30,7 @@ export class GuestlistComponent implements OnInit {
       })
   }
 
+  // && guest.status != 'Checked Out'
   //called on double click and the edit button
   editGuest(guest: Guest) {
     console.log(guest)

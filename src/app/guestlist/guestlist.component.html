@@ -6,7 +6,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-12">
   
-        <div class="guests" *ngIf="guestsList">
+        <div class="guests" *ngIf="guestsList ">
         <!-- Add logic for no available lists at this time with add a guest button  -->
           <table class="table table-hover">
             <thead class="thead-dark">
@@ -21,14 +21,17 @@
                 <th class="h">Options</th>
               </tr>
             </thead>
-            <caption>Check Out, Update or Delete a Guest</caption>
+            <caption>Check Out or Update Info</caption>
             <tbody>
+                <!-- <ng-container *ngIf="!editGuests.includes(guest) && guest.status != 'Checked Out'; else editG"> -->
               <!-- when you double clicked the row -->
               <tr class="guest" (dblclick)="editGuest(guest)" *ngFor="let guest of guestsList">
                   <!-- swaps row in and out with the form rows -->
                   <!-- is the object match what is in the edit array show the data to allow editing -->
                   <!-- if it's not there it is NOT to be edited -->
-                <ng-container *ngIf="!editGuests.includes(guest); else editG">
+                <ng-container *ngIf="guest.status != 'Checked Out'">
+                  <ng-container *ngIf="!editGuests.includes(guest); else editG"> 
+                 
                   <td>{{guest.name}}</td>
                   <td>{{guest.numNight}}</td>
                   <td>{{guest.roomNum}}</td>
@@ -57,16 +60,14 @@
                 </ng-template>
   
                 <td class="o">
-                  <button class="btn btn-success" (click)="checkOutGuest(guest)">
+                  <button class="btn btn-danger" (click)="checkOutGuest(guest)">
                     <i class="fa fa-check"></i>
                   </button> 
                   <button class="btn btn-primary" (click)="editGuest(guest)">
                     <i class="fa fa-pencil"></i>
                   </button>
-                  <button class="btn btn-danger" (click)="deleteGuest(guest)">
-                    <i class="fa fa-trash"></i>
-                  </button>
                 </td>
+            </ng-container>
   
               </tr>
             </tbody>

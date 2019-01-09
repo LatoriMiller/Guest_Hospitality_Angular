@@ -7,13 +7,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { GuestComponent } from './guest/guest.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { GuestlistComponent } from './guestlist/guestlist.component';
 import { FooterComponent } from './footer/footer.component';
+import { GuestHistoryComponent } from './guest-history/guest-history.component';
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     HomeComponent,
     NavComponent,
-    GuestComponent,
     AboutComponent,
     ReservationComponent,
     GuestlistComponent,
-    FooterComponent
+    FooterComponent,
+    GuestHistoryComponent
   ],
   imports: [
     BrowserModule,
